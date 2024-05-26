@@ -1,0 +1,23 @@
+site:
+  title: 1on1ミーティングガイド(1on1ガイド)
+  start_page: 1on1guide::index.adoc 
+  url: https://guide.1on1guide.org
+  robots: allow
+  keys:
+    google_analytics: 'XX-123456'
+content:
+  sources: 
+  - url: https://github.com/1on1guide-org/1on1meeting-guide.git
+    branches: Test-Antora
+ui: 
+  bundle:
+    url: 1on1guide-docs-ui/build/ui-bundle.zip
+    snapshot: true
+runtime:
+  log:
+    level: debug
+    failure_level: warn
+asciidoc:
+  sourcemap: true
+  attributes:
+    page-pagination: ''
