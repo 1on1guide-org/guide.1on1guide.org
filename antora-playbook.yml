@@ -2,7 +2,7 @@ site:
   title: 1on1ミーティングガイド(1on1ガイド)
   start_page: 1on1guide::index.adoc 
   url: https://guide.1on1guide.org
-  robots: allow
+  robots: disallow
   keys:
     google_analytics: 'XX-123456'
 content:
