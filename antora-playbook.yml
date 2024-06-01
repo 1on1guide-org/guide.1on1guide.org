@@ -11,7 +11,7 @@ content:
     branches: Test-Antora
 ui: 
   bundle:
-    url: 1on1guide-docs-ui/build/ui-bundle.zip
+    url: https://github.com/1on1guide-org/1on1guide-docs-ui/releases/download/prod-latest/ui-bundle.zip
     snapshot: true
 runtime:
   log:
