@@ -1,6 +1,6 @@
 site:
   title: 1on1ミーティングガイド(1on1ガイド)
-  start_page: 1on1guide::index.adoc 
+  start_page: ROOT::index.adoc
   url: https://guide.1on1guide.org
   robots: disallow
   keys:
@@ -9,6 +9,7 @@ content:
   sources: 
   - url: https://github.com/1on1guide-org/1on1meeting-guide.git
     branches: Test-Antora
+    start_paths: guide, community-doc
 ui: 
   bundle:
     url: https://github.com/1on1guide-org/1on1guide-docs-ui/releases/download/prod-latest/ui-bundle.zip
