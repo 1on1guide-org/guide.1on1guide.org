@@ -4,11 +4,11 @@ site:
   url: https://guide.1on1guide.org
   robots: disallow
   keys:
-    google_analytics: 'XX-123456'
+    google_analytics: 'G-R9M74R2SP8'
 content:
   sources: 
   - url: https://github.com/1on1guide-org/1on1meeting-guide.git
-    branches: Test-Antora
+    branches: main
     start_paths: guide, community-doc
 ui: 
   bundle:
@@ -17,7 +17,7 @@ ui:
 runtime:
   log:
     level: debug
-    failure_level: warn
+    failure_level: info
 asciidoc:
   sourcemap: true
   attributes:
