@@ -4,7 +4,7 @@ site:
   url: https://guide.1on1guide.org
   robots: disallow
   keys:
-    google_analytics: 'G-R9M74R2SP8'
+    google_analytics: 'G-123456'
 content:
   sources: 
   - url: https://github.com/1on1guide-org/1on1meeting-guide.git
@@ -12,7 +12,7 @@ content:
     start_paths: guide, community-doc
 ui: 
   bundle:
-    url: https://github.com/1on1guide-org/1on1guide-docs-ui/releases/download/prod-latest/ui-bundle.zip
+    url: ../1on1guide-docs-ui/build/ui-bundle.zip
     snapshot: true
 runtime:
   log:
