@@ -2,17 +2,17 @@ site:
   title: 1on1ミーティングガイド(1on1ガイド)
   start_page: ROOT::index.adoc
   url: https://guide.1on1guide.org
-  robots: disallow
+  robots: allow
   keys:
     google_analytics: 'G-123456'
 content:
   sources: 
-  - url: https://github.com/1on1guide-org/1on1meeting-guide.git
-    branches: main
-    start_paths: guide, community-doc
+  - url: ~/git/1on1guide-org/1on1meeting-guide/
+    branches: index-Plus-navi
+    start_paths: guide
 ui: 
   bundle:
-    url: ../1on1guide-docs-ui/build/ui-bundle.zip
+    url: ~/git/1on1guide-docs-ui/build/ui-bundle.zip
     snapshot: true
 runtime:
   log:
