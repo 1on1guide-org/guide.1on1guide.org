@@ -9,7 +9,7 @@ content:
   sources: 
   - url: https://github.com/1on1guide-org/1on1meeting-guide.git
     branches: main
-    start_paths: guide, community-doc
+    start_paths: guide
 ui: 
   bundle:
     url: https://github.com/1on1guide-org/1on1guide-docs-ui/releases/download/prod-latest/ui-bundle.zip

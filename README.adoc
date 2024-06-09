@@ -1,0 +1,79 @@
+= 1on1 meeting guide website
+// Settings:
+// ============================================
+:url-1on1meeting-guide-html: https://files.1on1guide.org/html/index.html
+:url-1on1meeting-guide-pdf: https://files.1on1guide.org/pdf/1on1meeting-guide.pdf
+:url-1on1meeting-guide-website: https://guide.1on1guide.org/
+:url-asciidoc-syntax-reference-html: {url-writing-guide-html}#ASCIIDOC-SYNTAX-REFERENCE
+:link-1on1meeting-guide-html: link:{url-1on1meeting-guide-html}[HTML版]
+:link-1on1meeting-guide-pdf: link:{url-1on1meeting-guide-pdf}[PDF版]
+:link-1on1meeting-guide-website: link:{url-1on1meeting-guide-pdf}[guide.1on1guide.org]
+// ============================================
+
+ifdef::badges[]
+image:https://gitlab.com/antora/docs.antora.org/badges/main/pipeline.svg[CI status,116,20,link=https://gitlab.com/antora/docs.antora.org/pipelines]
+image:https://www.netlify.com/img/global/badges/netlify-dark.svg[Deploy Status,45,20,link={url-netlify-deploys}]
+endif::[]
+
+このリポジトリには、{link-1on1meeting-guide-website} で公開されている 1on1 meeting guide websiteの Antora playbook プロジェクトが含まれています。
+
+
+== デプロイ前の出力先
+GitHub actionsのArtifactsとして出力されます。
+
+== ドキュメント生成方法
+mainブランチに対するpullリクエストがあればドキュメント生成を行っておりますが、以下の方法で手動実行することも可能です。
+
+. link:https://github.com/1on1guide-org/guide.1on1guide.org/actions/workflows/Publish2GitHubPages.yml[Github Actionsの「Deploy static content to Pages」] を開きます
+. 「Run workflow」で 「main」ブランチを指定します
+. 「Run workflow」ボタンを押下するとドライランを行うことができ、実行したActionのArtifactとしてtarファイルをダウンロード可能です。
+
+
+== {link-1on1meeting-guide-website}へのデプロイ方法
+手動で実行できます。 
+
+. link:https://github.com/1on1guide-org/guide.1on1guide.org/actions/workflows/Publish2GitHubPages.yml[Github Actionsの「Deploy static content to Pages」] を開きます
+. 「Run workflow」で 「main」ブランチを指定します。
+. 「Deploy to GitHub Pages.]にチェックを入れます。
+. 「Run workflow」ボタンを押下し実行してください。
+
+== ローカルでのbuild
+
+ここに簡単なbuild方法を記載します。 +
+詳しくは link:https://docs.antora.org/antora/latest/[Antoraのドキュメント]を参照してください。
+
+=== 1on1ガイドの本編とAntora buildに必要なUIをclone
+
+. link:https://github.com/1on1guide-org/1on1meeting-guide[1on1ガイドの執筆用リポジトリ]をcloneします
+. link:https://github.com/1on1guide-org/1on1guide-docs-ui[Antoraで構築するサイトのUI]をcloneします
+
+=== node_modulesのインストール
+本リポジトリのrootディレクトリで以下のコマンドを実行しAntoraをローカルインストールします。
+
+[source,bash]
+----
+npm ci
+----
+
+=== build
+本リポジトリのrootディレクトリで以下のコマンドを実行すると build/site にビルド結果が出力されます。 +
+この時、「local-antora-playbook.yml」の[content > sources > url]と [ui > bundle > url] はご自身の環境に合わせて変更してください。 
+
+[source,sh]
+----
+npx antora --fetch --stacktrace local-antora-playbook.yml
+----
+
+== ファイル構成
+
+[,tree,subs="attributes+"]
+----
+.
+├─ .github                      (Github向けのファイル)
+├─ build/site                   (公開用のディレクトリ)
+├─ antora-playbook.yml          (出力用Antora playbook プロジェクト)
+├─ local-antora-playbook.yml    (ローカル出力用Antora playbook プロジェクト)
+├─ LICENSE                      (ライセンスを記載したファイル)
+└─ README.adoc                  (本README)
+----
+
