@@ -31,16 +31,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
+      timeout-minutes: 1
       uses: actions/checkout@v4
     - name: Install Node.js
+      timeout-minutes: 1
       uses: actions/setup-node@v4
       with:
         node-version: '18'
     - name: Install Antora
+      timeout-minutes: 1
       run: npm i antora
     - name: Generate Site
+      timeout-minutes: 3
       run: npx antora antora-playbook.yml
     - name: Upload Artifacts
+      timeout-minutes: 1
       uses: actions/upload-pages-artifact@v3
       with:
         path: build/site
@@ -65,5 +70,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
+        timeout-minutes: 1
         id: deployment
         uses: actions/deploy-pages@v4
