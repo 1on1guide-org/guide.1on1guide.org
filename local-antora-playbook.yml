@@ -1,7 +1,7 @@
 site:
   title: 1on1ミーティングガイド(1on1ガイド)
   start_page: ROOT::index.adoc
-  url: https://guide.1on1guide.org
+  url: http://localhost:8080
   robots: allow
   keys:
     google_analytics: 'G-123456'
@@ -22,3 +22,8 @@ asciidoc:
   sourcemap: true
   attributes:
     page-pagination: ''
+antora:
+  extensions:
+  - require: '@antora/lunr-extension'
+    languages: [ja, en]
+

@@ -22,3 +22,7 @@ asciidoc:
   sourcemap: true
   attributes:
     page-pagination: ''
+antora:
+  extensions:
+  - require: '@antora/lunr-extension'
+    languages: [ja, en]
