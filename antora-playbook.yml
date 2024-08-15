@@ -22,6 +22,8 @@ asciidoc:
   sourcemap: true
   attributes:
     page-pagination: ''
+  extensions:
+  - asciidoctor-kroki
 antora:
   extensions:
   - require: '@antora/lunr-extension'
