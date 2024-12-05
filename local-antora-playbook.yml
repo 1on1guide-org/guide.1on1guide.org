@@ -8,7 +8,7 @@ site:
 content:
   sources: 
   - url: ~/git/1on1guide-org/1on1meeting-guide/
-    # branches: main
+    branches: main
     start_paths: guide
 ui: 
   bundle:
